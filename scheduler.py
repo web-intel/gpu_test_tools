@@ -8,8 +8,9 @@ import sys
 import time
 from os import path
 
-BIN_DIR     = path.join(path.dirname(path.abspath(__file__)), 'bin')
-PROJECT_DIR = path.abspath(path.join(path.dirname(path.abspath(__file__)), '..', '..', 'project'))
+FILE_DIR    = path.dirname(path.abspath(__file__))
+BIN_DIR     = path.join(FILE_DIR, 'bin')
+PROJECT_DIR = path.abspath(path.join(FILE_DIR, '..', '..', 'project'))
 
 def execute_command(cmd, dir=None):
   process = subprocess.Popen(cmd, cwd=dir, shell=(sys.platform=='win32'))
